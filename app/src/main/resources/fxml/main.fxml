@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mywork.desktop.MainController"
+      spacing="10" padding="20">
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Work Session Status:"/>
+        <Label fx:id="sessionStatusLabel" text="No active session"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="startSessionButton" text="Start Session" onAction="#handleStartSession"/>
+        <Button fx:id="endSessionButton" text="End Session" onAction="#handleEndSession" disable="true"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Start Time:"/>
+        <Label fx:id="startTimeLabel" text="--:--"/>
+        <Label text="End Time:"/>
+        <Label fx:id="endTimeLabel" text="--:--"/>
+    </HBox>
+
+    <VBox spacing="5">
+        <Label text="Tasks"/>
+        <HBox spacing="10">
+            <TextField fx:id="taskInputField" HBox.hgrow="ALWAYS" promptText="Enter new task"/>
+            <Button text="Add Task" onAction="#handleAddTask"/>
+        </HBox>
+        <ListView fx:id="tasksListView" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label text="Progress:"/>
+        <ProgressBar fx:id="progressBar" prefWidth="200"/>
+        <Label fx:id="progressLabel" text="0%"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label text="Time Remaining:"/>
+        <Label fx:id="timeRemainingLabel" text="--:--"/>
+    </HBox>
+</VBox> 
